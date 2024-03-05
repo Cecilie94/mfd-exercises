@@ -1,8 +1,9 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
+  <div class="nav">
+    <router-link :to="{ name: 'product' }">Product</router-link>
+  </div>
   <div class="container">
     <div class="product-list">
       <h2>Product List</h2>
@@ -16,16 +17,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const products = ref([
-  { id: 1, name: 'Nike Dunk Panda', price: 10 },
-  { id: 2, name: 'Nike Jordan 1', price: 20 },
-  { id: 3, name: 'Sketcher', price: 30 }
+  { id: 1, name: "Nike Dunk Panda", price: 10 },
+  { id: 2, name: "Nike Jordan 1", price: 20 },
+  { id: 3, name: "Sketcher", price: 30 },
 ]);
 
 const addToCart = (product) => {
-  console.log('Adding product to cart:', product);
+  console.log("Adding product to cart:", product);
   // Add your logic to add the product to the cart here
 };
 </script>
