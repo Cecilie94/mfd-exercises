@@ -15,7 +15,6 @@ const router = createRouter({
       path: "/product/:id", // Tilføj en dynamisk ruteparameter for produktets id
       name: "singleproduct",
       component: SingleProduct,
-      props: true,
     },
   ],
 });

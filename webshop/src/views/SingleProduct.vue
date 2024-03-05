@@ -2,22 +2,37 @@
   <div>
     <h1>{{ product.name }}</h1>
     <p>{{ product.description }}</p>
+    <h2>hello</h2>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
 
 const router = useRouter();
-const productId = router.currentRoute.value.params.id; // Hent produktets id fra ruten
-
+const productId = ref(null);
 const products = ref([
-  { id: 1, name: 'Nike Dunk Panda', description: 'Description for Nike Dunk Panda' },
-  { id: 2, name: 'Nike Jordan 1', description: 'Description for Nike Jordan 1' },
-  { id: 3, name: 'Sketcher', description: 'Description for Sketcher' }
+  {
+    id: 1,
+    name: "Nike Dunk Panda",
+    description: "Description for Nike Dunk Panda",
+  },
+  {
+    id: 2,
+    name: "Nike Jordan 1",
+    description: "Description for Nike Jordan 1",
+  },
+  { id: 3, name: "Sketcher", description: "Description for Sketcher" },
 ]);
 
 // Filtrer produktet baseret på id
-const product = products.value.find(item => item.id === Number(productId));
+const product = ref(null);
+
+onMounted(() => {
+  productId.value = router.currentRoute.value.params.id;
+  product.value = products.value.find(
+    (item) => item.id === Number(productId.value)
+  );
+});
 </script>
