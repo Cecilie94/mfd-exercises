@@ -8,5 +8,7 @@ const counter = useCounterStore();
 
 <template>
   <ProductList />
+
   <SingleProduct />
+
 </template>
