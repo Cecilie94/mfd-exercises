@@ -1,3 +1,4 @@
+// router.js
 import { createRouter, createWebHistory } from "vue-router";
 import ProductList from "../views/ProductList.vue";
 import SingleProduct from "../views/SingleProduct.vue";
@@ -11,8 +12,8 @@ const router = createRouter({
       component: ProductList,
     },
     {
-      path: "/product",
-      name: "product",
+      path: "/product/:id", // Tilføj en dynamisk ruteparameter for produktets id
+      name: "singleproduct",
       component: SingleProduct,
     },
   ],
