@@ -1,7 +1,7 @@
 {
   "name": "webshop",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,10 +10,11 @@
   },
   "dependencies": {
     "pinia": "^2.1.7",
-    "vue": "^3.3.11"
+    "vue": "^3.4.15",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.5.2",
-    "vite": "^5.0.8"
+    "@vitejs/plugin-vue": "^5.0.3",
+    "vite": "^5.0.11"
   }
 }
