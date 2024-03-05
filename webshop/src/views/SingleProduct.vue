@@ -1,12 +1,23 @@
-<script setup></script>
-
 <template>
   <div>
-    <h1>This is a single product page</h1>
     <h1>{{ product.name }}</h1>
-    <p>Price: ${{ product.price }}</p>
-    <button @click="addToCart">Add to Cart</button>
+    <p>{{ product.description }}</p>
   </div>
 </template>
 
-<style></style>
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const productId = router.currentRoute.value.params.id; // Hent produktets id fra ruten
+
+const products = ref([
+  { id: 1, name: 'Nike Dunk Panda', description: 'Description for Nike Dunk Panda' },
+  { id: 2, name: 'Nike Jordan 1', description: 'Description for Nike Jordan 1' },
+  { id: 3, name: 'Sketcher', description: 'Description for Sketcher' }
+]);
+
+// Filtrer produktet baseret på id
+const product = products.value.find(item => item.id === Number(productId));
+</script>
