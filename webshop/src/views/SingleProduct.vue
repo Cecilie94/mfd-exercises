@@ -3,6 +3,7 @@
     <h1>{{ product ? product.name : '' }}</h1>
     <p>{{ product ? product.description : '' }}</p>
     <h2>hello</h2>
+    <router-link to="/" class="back-button">Go back</router-link>
   </div>
 </template>
 
