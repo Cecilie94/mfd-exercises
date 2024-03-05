@@ -1,10 +1,11 @@
 <template>
   <div>
-    <h1>{{ product.name }}</h1>
-    <p>{{ product.description }}</p>
+    <h1>{{ product ? product.name : '' }}</h1>
+    <p>{{ product ? product.description : '' }}</p>
     <h2>hello</h2>
   </div>
 </template>
+
 
 <script setup>
 import { ref, onMounted } from "vue";

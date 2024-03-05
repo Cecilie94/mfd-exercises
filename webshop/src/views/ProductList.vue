@@ -16,6 +16,7 @@
 <script setup>
 import { ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
+import SingleProduct from "./SingleProduct.vue";
 
 const products = ref([
   { id: 1, name: "Nike Dunk Panda", price: 10 },
