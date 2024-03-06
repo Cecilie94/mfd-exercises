@@ -25,6 +25,7 @@ export default defineComponent({
           <font-awesome-icon class="fa-cs" icon="fa-solid fa-cart-shopping"
         /></router-link>
       </li>
+      <li><router-link to="/admin">Admin Page</router-link></li>
     </ul>
   </nav>
 </template>
