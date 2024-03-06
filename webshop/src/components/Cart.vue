@@ -1,13 +1,13 @@
 <script setup>
-import { defineComponent, computed } from "vue";
-import { RouterLink } from "vue-router";
+import { ref } from "vue";
 import Navbar from "./Navbar.vue";
 
-const cartItems = [
-  { id: 1, name: "Product 1", price: 10 },
-  { id: 2, name: "Product 2", price: 20 },
-  { id: 3, name: "Product 3", price: 30 },
-];
+const cartItems = ref(JSON.parse(localStorage.getItem("cart")) || []);
+
+function removeItem(id) {
+  cartItems.value = cartItems.value.filter((item) => item.id !== id);
+  localStorage.setItem("cart", JSON.stringify(cartItems.value));
+}
 </script>
 
 <template>
@@ -17,6 +17,7 @@ const cartItems = [
     <ul>
       <li v-for="item in cartItems" :key="item.id">
         {{ item.name }} - ${{ item.price }}
+        <button @click="removeItem(item.id)">Remove</button>
       </li>
     </ul>
   </div>

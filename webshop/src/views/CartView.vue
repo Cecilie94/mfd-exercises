@@ -8,9 +8,6 @@ import Cart from "../components/Cart.vue";
 <template>
   <Navbar />
   <div>
-    <h1>This is your cart</h1>
-  </div>
-  <div>
     <Cart />
   </div>
 </template>
