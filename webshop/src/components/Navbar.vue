@@ -25,7 +25,7 @@ export default defineComponent({
       </li>
       <li>
         <router-link to="/cart"
-          >Cart ({{ cartItemCount }})
+          >View Cart ({{ cartItemCount }})
           <font-awesome-icon class="fa-cs" icon="fa-solid fa-cart-shopping"
         /></router-link>
       </li>

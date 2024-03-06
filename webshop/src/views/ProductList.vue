@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
-import SingleProduct from "./SingleProduct.vue";
 import Navbar from "../components/Navbar.vue";
 
 const products = ref([
