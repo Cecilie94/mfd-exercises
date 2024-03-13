@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import Navbar from "./Navbar.vue";
+import { useProductStore } from "../stores/products.js";
 
 const cartItems = ref(JSON.parse(localStorage.getItem("cart")) || []);
 
